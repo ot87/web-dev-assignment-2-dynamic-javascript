@@ -15,3 +15,34 @@ main,
 footer {
   padding: 24px;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+@media screen and (max-width: 649px) {
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.nav-link {
+  text-decoration: none;
+  color: blue;
+  font-size: 24px;
+  font-weight: 700;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
