@@ -74,6 +74,36 @@
       </section>
       <section>
         <h2>Contact Us</h2>
+        <form>
+          <div class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected hidden>
+                Select an option
+              </option>
+              <option value="question">Question</option>
+              <option value="suggestion">Suggestion</option>
+              <option value="other">Hi!</option>
+            </select>
+            <label for="message">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              rows="5"
+              placeholder="Send me a note"
+              required
+              minlength="10"
+            ></textarea>
+          </div>
+          <div class="form-buttons">
+            <input type="submit" />
+            <input type="reset" />
+          </div>
+        </form>
       </section>
     </main>
     <footer><p>Responsive CSS is the best!</p></footer>
