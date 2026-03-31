@@ -75,26 +75,38 @@ main {
 .card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.card-cover {
+  display: grid;
+}
+.card-cover figure,
+span {
+  grid-row: 1;
+  grid-column: 1;
+}
 .card img {
   border-radius: 12px;
-}
-.card-title {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
 }
 .category {
   font-size: 14px;
   font-style: italic;
+  width: fit-content;
+  height: fit-content;
+  padding: 8px 6px;
+  margin: 6px;
+  border-radius: 6px;
+  color: ghostwhite;
 }
 .category-web-design {
-  color: blueviolet;
+  background-color: rgba(138, 43, 226, 0.7);
+  border: 1px solid blueviolet;
 }
 .category-copywriting {
-  color: chocolate;
+  background-color: rgba(210, 105, 30, 0.7);
+  border: 1px solid chocolate;
 }
 .category-soft-skills {
-  color: forestgreen;
+  background-color: rgba(34, 139, 34, 0.7);
+  border: 1px solid forestgreen;
 }
 .card-button {
   place-self: end;
