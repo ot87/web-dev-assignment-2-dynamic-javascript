@@ -1,1 +1,1 @@
-# Assignment #1 UI Components
+# Assignment #2 Dynamic JavaScript
