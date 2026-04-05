@@ -64,13 +64,13 @@ main {
   background-color: lightgray;
   border-radius: 12px;
   padding: 16px;
+  max-width: 300px;
+  min-width: 200px;
   display: grid;
   grid-template-rows: repeat(4, auto);
   place-items: center;
   gap: 8px;
-  transition:
-    box-shadow 0.5s ease-out 0s,
-    width 0.5s ease-out 0s;
+  transition: box-shadow 0.5s ease-out 0s;
 }
 .card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -85,6 +85,8 @@ span {
 }
 .card img {
   border-radius: 12px;
+  width: 100%;
+  height: auto;
 }
 .category {
   font-size: 14px;
@@ -96,16 +98,16 @@ span {
   border-radius: 6px;
   color: ghostwhite;
 }
-.category-web-design {
-  background-color: rgba(138, 43, 226, 0.7);
+.category-landing-page {
+  background-color: rgba(138, 43, 226, 0.8);
   border: 1px solid blueviolet;
 }
-.category-copywriting {
-  background-color: rgba(210, 105, 30, 0.7);
+.category-1 {
+  background-color: rgba(210, 105, 30, 0.8);
   border: 1px solid chocolate;
 }
-.category-soft-skills {
-  background-color: rgba(34, 139, 34, 0.7);
+.category-2 {
+  background-color: rgba(34, 139, 34, 0.8);
   border: 1px solid forestgreen;
 }
 .card-button {
