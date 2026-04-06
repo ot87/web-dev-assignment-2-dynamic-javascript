@@ -49,7 +49,32 @@ function renderProjects(projectList) {
     projectCardList.push(cardElement);
   });
 
-  projectsContainer.append(...projectCardList);
+  if (projectCardList.length) {
+    projectsContainer.replaceChildren(...projectCardList);
+  } else {
+    projectsContainer.replaceChildren(
+      Object.assign(document.createElement("p"), {
+        className: "no-matches-found",
+        textContent: "No matches found.",
+      }),
+    );
+  }
+}
+
+function filterProjects(e) {
+  const searchString = e.target.value.trim().toLowerCase();
+  const filteredProjectList = projectList.filter(
+    ({ title, description, category }) =>
+      title.toLowerCase().includes(searchString) ||
+      description.toLowerCase().includes(searchString) ||
+      category.name.toLowerCase().includes(searchString),
+  );
+
+  renderProjects(filteredProjectList);
 }
 
 renderProjects(projectList);
+
+document
+  .querySelector("#search-input")
+  .addEventListener("keyup", filterProjects);
