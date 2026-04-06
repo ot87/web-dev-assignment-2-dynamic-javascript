@@ -52,6 +52,26 @@ main {
   text-decoration: underline;
 }
 
+.projects-section {
+  display: grid;
+  gap: 12px;
+}
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+#search-input {
+  padding: 8px;
+  border-radius: 6px;
+}
+.no-matches-found {
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 600;
+}
 .projects {
   margin-top: 12px;
   display: flex;
