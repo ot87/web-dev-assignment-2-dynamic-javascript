@@ -63,7 +63,7 @@ function renderProjects(projectList) {
 
 function filterProjects(e) {
   const searchString = e.target.value.trim().toLowerCase();
-  const filteredProjectList = projectList.filter(
+  const filteredProjectList = projectsData.filter(
     ({ title, description, category }) =>
       title.toLowerCase().includes(searchString) ||
       description.toLowerCase().includes(searchString) ||
@@ -73,7 +73,32 @@ function filterProjects(e) {
   renderProjects(filteredProjectList);
 }
 
-renderProjects(projectList);
+let projectsData = [];
+async function fetchProjects() {
+  const projectsContainer = document.querySelector(".projects");
+
+  projectsContainer.innerHTML = "<p>Loading Projects ...</p>";
+
+  try {
+    const response = await fetch(
+      "https://ot87.github.io/web-dev-assignment-2-dynamic-javascript/data/projects.json",
+    );
+    projectsData = await response.json();
+
+    renderProjects(projectsData);
+  } catch (e) {
+    document.querySelector(".projects").innerHTML = `<div>
+        <p style="padding-bottom:6px;">Projects are unavailable right now. Please try again later...</p>
+        <button id="retry-fetch">Retry</button>
+      </div>`;
+
+    document.querySelector("#retry-fetch").addEventListener("click", () => {
+      fetchProjects();
+    });
+  }
+}
+
+fetchProjects();
 
 document
   .querySelector("#search-input")
